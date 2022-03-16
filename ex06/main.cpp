@@ -39,7 +39,6 @@ int	main(int argc, char **argv)
 		case 3:
 			Karen.complain("ERROR");
 			break;
-		case 4:
 		default:
 			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}

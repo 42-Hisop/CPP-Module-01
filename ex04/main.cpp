@@ -13,10 +13,11 @@ std::string	make_newline(std::string buf, std::string find, std::string replace)
 	std::size_t	f;
 	
 	f = 0;
-	while ((f = buf.find(find)) != std::string::npos)
+	while ((f = buf.find(find, f)) != std::string::npos)
 	{
 		buf.erase(f, find.length());
 		buf.insert(f, replace);
+		f = f + replace.length();
 	}
 	return (buf);
 }

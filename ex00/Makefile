@@ -1,5 +1,5 @@
 CC= clang++
-CFLAGS= -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 SRCS= main.cpp \
 	  Zombie.cpp \
 	  newZombie.cpp \
@@ -7,12 +7,20 @@ SRCS= main.cpp \
 	  
 NAME= Zombie
 
+OBJS= $(SRCS:.cpp=.o)
+
 all: $(NAME)
 
-$(NAME):
-	$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
+$(NAME): $(OBJS)
+	$(CC) $(OBJS) -o $(NAME)
 
-fclean:
+.cpp.o:
+	$(CC) $(CFLAGS) -c $< -o $(<:.cpp=.o)
+
+clean:
+	rm -f $(OBJS)
+
+fclean: clean
 	rm -f $(NAME)
 
 re:fclean all
