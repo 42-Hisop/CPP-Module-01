@@ -21,8 +21,7 @@ HumanB::HumanB(std::string name)
 	this->_weapon = NULL;
 	return ;
 }
-
-HumanB::~HumanB()
+HumanB::~HumanB(void)
 {
 	return ;
 }

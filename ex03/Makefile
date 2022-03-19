@@ -1,4 +1,4 @@
-CC= clang++
+CC= c++
 CFLAGS = -Wall -Wextra -Werror
 SRCS= main.cpp \
 	  Weapon.cpp \
